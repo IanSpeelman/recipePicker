@@ -1,0 +1,16 @@
+<%- layout("./layout/boilerplate") %>
+<h1><%= recipe.name %></h1>
+<h2><%= recipe.description %></h2>
+<p><%= recipe.cuisine %></p>
+<p><%= recipe.servings %></p>
+<p><%= recipe.prep_time %></p>
+<p><%= recipe.cook_time %></p>
+<p><%= recipe.image %></p>
+<h2>ingredients</h2>
+<% recipe.ingredients.forEach(ingredient => { %>
+<li><%= ingredient.amount %><%= ingredient.ingredient %> <%= ingredient.unit %></li>
+<% }) %>
+<h2>instructions</h2>
+<% recipe.instructions.forEach(instruction => { %>
+<li><%= instruction %></li>
+<% }) %>
