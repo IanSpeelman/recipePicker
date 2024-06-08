@@ -14,15 +14,20 @@ app.engine("ejs", engine)
 app.set("views", `${__dirname}/views`)
 app.set("view engine", "ejs")
 
-app.get("/recipes", (req,res) => {
-
-      res.render("recipes/index")
+app.get("/recipes", async (req,res) => {
+      const recipes = await Recipe.find()
+      res.render("recipes/index", { recipes })
 })
 
 app.get("/recipes/random", async (req,res) => {
       const result = await Recipe.find()
       const rand = Math.floor(Math.random() * result.length)
       const recipe = result[rand]
+      res.render("recipes/show", { recipe })
+})
+app.get("/recipes/:id", async (req,res) => {
+      const { id } = req.params;
+      const recipe = await Recipe.findById(id)
       res.render("recipes/show", { recipe })
 })
 
