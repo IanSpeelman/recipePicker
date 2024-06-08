@@ -17,6 +17,13 @@ app.set("view engine", "ejs")
 app.get("/recipes", (req,res) => {
 
       res.render("recipes/index")
-}) 
+})
+
+app.get("/recipes/random", async (req,res) => {
+      const result = await Recipe.find()
+      const rand = Math.floor(Math.random() * result.length)
+      const recipe = result[rand]
+      res.render("recipes/show", { recipe })
+})
 
 app.listen(port, () => console.log(`app listening on port ${port}`))
