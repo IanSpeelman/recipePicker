@@ -12,6 +12,7 @@ mongoose.connect("mongodb://localhost:27017/recipe-picker")
       
 app.engine("ejs", engine)
 app.set("views", `${__dirname}/views`)
+app.use(express.static(`${__dirname}/public`))
 app.set("view engine", "ejs")
 
 app.get("/recipes", async (req,res) => {
