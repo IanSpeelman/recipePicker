@@ -1,0 +1,95 @@
+<%- layout("./layout/boilerplate") %>
+<div class="recipe-container">
+	<form
+		action="/recipes"
+		method="post">
+            <button>Save recipe</button>
+		<div class="recipe-show">
+			<div class="recipe-show-header">
+				<div class="recipe-show-image">
+					<img
+						src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp"
+						alt="" />
+				</div>
+				<div class="col m-auto">
+					<div class="recipe-show-title">
+						<h1
+							><input
+								type="text"
+								name="title"
+								placeholder="title" />
+						</h1>
+						<h2
+							><sup
+								><input
+									type="text"
+									name="description"
+									placeholder="description" /> </sup
+						></h2>
+					</div>
+					<div class="recipe-show-info row">
+						<div class="col">
+							<p
+								><input
+									type="text"
+									name="cuisine"
+									placeholder="cuisine"
+							/></p>
+							<p
+								><input
+									type="number"
+									name="servings"
+									placeholder="servings"
+							/></p>
+						</div>
+						<div class="col">
+							<p
+								><input
+									type="number"
+									name="prep_time"
+									placeholder="prep time" />
+								mins</p
+							>
+							<p
+								><input
+									type="number"
+									name="cook_time"
+									placeholder="cook time" />
+								mins</p
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="recipe-show-body">
+				<div class="recipe-body-ingredients">
+					<h2>ingredients</h2>
+					<li
+						><input
+							type="number"
+							name="amount"
+							placeholder="amount" />
+						<select
+							name="unit"
+							id="">
+							<option value="g">gram</option>
+							<option value="ml">milliliters</option> </select
+						><input
+							type="text"
+							name="ingredient"
+							placeholder="ingredient"
+					/></li>
+				</div>
+				<div class="recipe-body-instructions">
+					<h2>instructions</h2>
+					<ol>
+						<li
+							><input
+								type="text"
+                                                name="instruction"
+								placeholder="instruction"
+						/></li>
+						
+					</ol>
+				</div> </div></div></form
+></div>
