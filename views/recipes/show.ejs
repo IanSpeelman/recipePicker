@@ -1,16 +1,49 @@
 <%- layout("./layout/boilerplate") %>
-<h1><%= recipe.name %></h1>
-<h2><%= recipe.description %></h2>
-<p><%= recipe.cuisine %></p>
-<p><%= recipe.servings %></p>
-<p><%= recipe.prep_time %></p>
-<p><%= recipe.cook_time %></p>
-<p><%= recipe.image %></p>
-<h2>ingredients</h2>
-<% recipe.ingredients.forEach(ingredient => { %>
-<li><%= ingredient.amount %><%= ingredient.ingredient %> <%= ingredient.unit %></li>
-<% }) %>
-<h2>instructions</h2>
-<% recipe.instructions.forEach(instruction => { %>
-<li><%= instruction %></li>
-<% }) %>
+<div class="recipe-container">
+	<div class="recipe-show">
+		<div class="recipe-show-header">
+			<div class="recipe-show-image">
+				<img
+					src="<%= recipe.image %>"
+					alt="" />
+			</div>
+                  <div class="col m-auto">
+                        <div class="recipe-show-title">
+                              <h1><%= recipe.name %></h1>
+                              <h2><sup><%= recipe.description %></sup></h2>
+                        </div>
+                        <div class="recipe-show-info row">
+                              <div class="col">
+                                    <p>cuisine: <%= recipe.cuisine %></p>
+                                    <p>servings: <%= recipe.servings %></p>
+                              </div>
+                              <div class="col">
+                                    <p>prep time: <%= recipe.prep_time %></p>
+                                    <p>cook time: <%= recipe.cook_time %></p>
+                              </div>
+                        </div>
+                  </div>
+		</div>
+            <div class="recipe-show-body">
+                  <div class="recipe-body-ingredients">
+                        <h2>ingredients</h2>
+                        <% recipe.ingredients.forEach(ingredient => { %>
+                        <li
+                              ><%= ingredient.amount %><%=
+                              ingredient.unit %> <%= ingredient.ingredient %></li
+                        >
+                        <% }) %>
+                  </div>
+                  <div class="recipe-body-instructions">
+                        <h2>instructions</h2>
+                        <ol>
+                              <% recipe.instructions.forEach(instruction => { %>
+                              <li><%= instruction %></li>
+                              <% }) %>
+                        </ol>
+                  </div>
+            </div>
+		
+
+	</div></div
+>

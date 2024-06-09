@@ -34,6 +34,10 @@ const recipeSchema = new Schema({
 		type: Array,
 		required: true,
 	},
+	image: {
+		type: String,
+		required: true
+	}
 });
 const Recipe = model("Recipe", recipeSchema)
 module.exports = Recipe
