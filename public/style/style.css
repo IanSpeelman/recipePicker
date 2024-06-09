@@ -38,6 +38,9 @@
 .recipe-show-header img {
 	width: 15em;
 }
+.recipe-show-image{
+      flex: 2;
+}
 .col {
 	display: flex;
 	flex-direction: column;
@@ -51,7 +54,6 @@
 	text-align: center;
 }
 .recipe-show-title {
-	margin-left: 1em;
 	line-height: 0.2em;
 }
 .recipe-show-info {
@@ -59,7 +61,7 @@
 }
 
 .m-auto {
-	margin: 0 auto;
+	flex: 5;
 }
 .recipe-show-body {
 	display: flex;
